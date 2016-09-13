@@ -1,0 +1,19 @@
+{
+  "name": "nwind-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "WS_URL=ws://localhost:3001 API_URL=http://localhost:3001 nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^1.0.0-beta.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "swig": "^1.4.2"
+  }
+}

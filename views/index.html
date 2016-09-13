@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.css' />
+    <script src='/angular/angular.js'></script>
+    <script src='/angular-ui-router/release/angular-ui-router.js'></script>
+    <script src='/app.js'></script>
+    <script src='/UsersListCtrl.js'></script>
+    <script src='/UserService.js'></script>
+  </head>
+  <body ng-app='app'>
+    <div class='container'>
+      <ul class='nav nav-tabs'>
+        <li ui-sref-active='active'>
+          <a ui-sref='home'>Home</a>
+        </li>
+        <li ui-sref-active='active'>
+          <a ui-sref='users'>Users</a>
+        </li>
+      </ul>
+    <ui-view></ui-view>
+    <script>
+      var API_URL = '{{ API_URL }}';
+      var WS_URL = '{{ WS_URL }}';
+    </script>
+    <script>
+      var ws = new WebSocket(WS_URL);
+      ws.onmessage = function(message){
+        console.log(message);
+      }
+      ws.opopen = function(){
+        console.log('success');
+      };
+      ws.onerror = function(){
+        console.log('error');
+      }
+    </script>
+    </div>
+  </body>
+</html>
