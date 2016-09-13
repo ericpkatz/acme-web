@@ -7,6 +7,7 @@
     <script src='/UsersListCtrl.js'></script>
     <script src='/UserService.js'></script>
     <script src='/usersStatus.js'></script>
+    <script src='/WebSocketService.js'></script>
   </head>
   <body ng-app='app'>
     <div class='container'>
@@ -24,16 +25,6 @@
       var WS_URL = '{{ WS_URL }}';
     </script>
     <script>
-      var ws = new WebSocket(WS_URL);
-      ws.onmessage = function(message){
-        console.log(message);
-      }
-      ws.opopen = function(){
-        console.log('success');
-      };
-      ws.onerror = function(){
-        console.log('error');
-      }
     </script>
     </div>
   </body>
