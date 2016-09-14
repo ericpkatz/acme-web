@@ -5,7 +5,17 @@ angular.module('app')
 
     $rootScope.$on('User.create', function(ev, data){
       _users.push(data);
-      console.log(data);
+      $rootScope.$apply();
+    });
+
+    $rootScope.$on('User.destroy', function(ev, data){
+      let idx;
+      _users.forEach( (user, index)=> {
+        if(user.id === data.id)
+          idx = index;
+      });
+      if(idx !== undefined)
+        _users.splice(idx, 1);
       $rootScope.$apply();
     });
 
